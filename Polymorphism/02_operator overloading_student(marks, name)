@@ -61,7 +61,7 @@ int main()
 	student s2("Avi", 101);
 	student s("krishna", 102);
 	student s1(" ",0);
-	s1 = s2.operator +(s);
+	s1 = s2.operator +(s);        // s1 = s2 + s;
 	cout<< "total marks ="<< s1.marks << " " << "of " <<s1.name;
 	
 	return 0; 
