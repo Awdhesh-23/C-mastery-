@@ -1,0 +1,34 @@
+//polymorphism
+//write a program to calculate the area of different shapes(rectangle, square, circle) using function overloading
+
+#include <iostream>
+using namespace std;
+
+class one 
+{
+	public:
+		//double l,b; --> no need to declare here
+		
+		
+		void area (double l)
+		{
+			cout<< l*l<<endl;
+		}
+		void area (double l, double h)
+		{
+			cout<<l*h<<endl;
+		}
+		void area_circle (double l) // cant be void circle (double l, char A) --> causes ambiguity if while dont put paramete properly like for rectangle wrong will be --> (5,10). 
+		{
+			cout<< 3.14*l*l<<endl; // better way to write pie
+		}
+};
+
+int main()
+{
+	one o1;
+	o1.area(5.0);             //good practise - 5.0, as no implicit converstion needed
+	o1.area(5.0,10.0);
+	o1.area_circle(5.0);
+	return 0;
+}
