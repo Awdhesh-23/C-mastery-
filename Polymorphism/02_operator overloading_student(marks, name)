@@ -1,0 +1,68 @@
+// operator overloading
+//
+// Create a class named Student   ^
+
+// Data members:
+// - string name
+// - int marks
+
+// Create a constructor to initialize name and marks
+
+// Overload the binary + operator:
+// - It should take another Student object as parameter
+// - Return type should be Student
+
+// Logic of + operator:
+// - Add marks of both students
+// - Combine names using " & "
+//   Example: "Awdhesh & Rahul"
+
+// In main():
+// - Create two Student objects with different names and marks
+// - Use + operator to create a third Student object
+//   Example: Student s3 = s1 + s2;
+
+// Create a display() function:
+// - Print name and marks of the student
+
+// Expected output format:
+// Name: Awdhesh & Rahul
+// Marks: 175
+
+
+#include<iostream>
+using namespace std;
+
+class student
+{
+	public:
+	string name;
+	int marks;
+	
+	student(string n, int m)  //constrctor
+	{
+		name = n;
+		marks = m;
+	}
+	
+	// return has to be there - why??--> you can use cout<< -- but this is not a good practise
+	
+	student operator + (student s)
+	{
+		student s1(" ",0);
+		s1.marks = marks + s.marks;
+		s1.name = name + " & " + s.name;
+		return s1;
+	}
+};
+
+int main()
+{
+	student s2("Avi", 101);
+	student s("krishna", 102);
+	student s1(" ",0);
+	s1 = s2.operator +(s);
+	cout<< "total marks ="<< s1.marks << " " << "of " <<s1.name;
+	
+	return 0; 
+}
